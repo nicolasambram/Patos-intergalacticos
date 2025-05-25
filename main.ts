@@ -4,11 +4,14 @@ namespace SpriteKind {
     export const c = SpriteKind.create()
     export const d = SpriteKind.create()
 }
-controller.player4.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
-    player4.vy = -200
+scene.onOverlapTile(SpriteKind.a, assets.tile`miMosaicosecreto`, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`nivelsecreto`)
+    player1.setPosition(8, 10)
+    player2.setPosition(8, 10)
 })
-scene.onOverlapTile(SpriteKind.c, assets.tile`myTile2`, function (sprite, location) {
-    player3.setPosition(8, 54)
+scene.onOverlapTile(SpriteKind.a, assets.tile`myTile0`, function (sprite, location) {
+    player1.setPosition(8, 10)
+    player2.setPosition(40, 10)
 })
 controller.player1.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Pressed, function () {
     player1.setImage(img`
@@ -30,62 +33,18 @@ controller.player1.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.P
         . . . c c c c c c c c b b . . . 
         `)
 })
-controller.player4.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pressed, function () {
-    player4.setImage(img`
-        . . . b 9 b . . . . . . . . . . 
-        . . . . b 9 b . . . . . . . . . 
-        . . . . . c b . . . . . . . . . 
-        . . . . b b b b b b . . . . . . 
-        . . . b 9 9 9 9 9 b b . . . . . 
-        . . f 6 9 9 f 1 6 9 b b . . . . 
-        . . c 4 6 9 f f 1 9 9 b . . . . 
-        . . 4 4 6 6 b f 6 9 9 b . . . . 
-        b 4 4 4 4 4 9 9 9 6 b b 6 6 6 b 
-        . b 4 4 4 4 4 9 9 b 9 9 9 6 b b 
-        . . b 9 9 9 9 9 6 9 9 9 9 c 6 b 
-        . b 9 9 9 9 9 9 b 9 9 6 c 6 6 c 
-        . b 9 9 9 9 9 9 9 b c c 6 6 b c 
-        . b 6 9 9 9 9 9 6 6 6 6 6 6 c . 
-        . . b b 9 9 9 6 6 6 6 6 b c . . 
-        . . . b b c c c c c c c c . . . 
-        `)
-})
 controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     player2.vy = -200
 })
-scene.onOverlapTile(SpriteKind.d, assets.tile`myTile3`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.a, assets.tile`myTile4`, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`nivel6`)
+    player1.setPosition(8, 10)
+    player2.setPosition(40, 10)
+})
+scene.onOverlapTile(SpriteKind.a, assets.tile`myTile1`, function (sprite, location) {
     tiles.setCurrentTilemap(tilemap`nivel2`)
     player1.setPosition(8, 10)
     player2.setPosition(40, 10)
-    player3.setPosition(8, 54)
-    player4.setPosition(40, 54)
-})
-scene.onOverlapTile(SpriteKind.a, assets.tile`myTile4`, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`nivel1`)
-    player1.setPosition(8, 10)
-    player2.setPosition(40, 10)
-    player3.setPosition(8, 54)
-    player4.setPosition(40, 54)
-})
-controller.player3.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Pressed, function () {
-    player3.setImage(img`
-        . . . . . . . . . . b 7 b . . . 
-        . . . . . . . . . b 7 b . . . . 
-        . . . . . . . . . b c . . . . . 
-        . . . . . . b b b b b b . . . . 
-        . . . . . b b 7 7 7 7 7 b . . . 
-        . . . . b b 7 6 1 f 7 7 6 f . . 
-        . . . . b 7 7 1 f f 7 6 4 c . . 
-        . . . . b 7 7 6 f b 6 6 4 4 . . 
-        b 6 6 6 b b 6 7 7 7 4 4 4 4 4 b 
-        b b 6 7 7 7 b 7 7 4 4 4 4 4 b . 
-        b 6 c 7 7 7 7 6 7 7 7 7 7 b . . 
-        c 6 6 c 6 7 7 b 7 7 7 7 7 7 b . 
-        c b 6 6 c c b 7 7 7 7 7 7 7 b . 
-        . c 6 6 6 6 6 6 7 7 7 7 7 6 b . 
-        . . c b 6 6 6 6 6 7 7 7 b b . . 
-        . . . c c c c c c c c b b . . . 
-        `)
 })
 controller.player2.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pressed, function () {
     player2.setImage(img`
@@ -107,22 +66,10 @@ controller.player2.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pr
         . . . b b c c c c c c c c . . . 
         `)
 })
-scene.onOverlapTile(SpriteKind.c, assets.tile`myTile5`, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`nivel6`)
-    player1.setPosition(8, 10)
-    player2.setPosition(40, 10)
-    player3.setPosition(8, 54)
-    player4.setPosition(40, 54)
-})
 scene.onOverlapTile(SpriteKind.a, assets.tile`myTile2`, function (sprite, location) {
-    player1.setPosition(8, 10)
-})
-scene.onOverlapTile(SpriteKind.d, assets.tile`myTile5`, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`nivel6`)
+    tiles.setCurrentTilemap(tilemap`nivel1`)
     player1.setPosition(8, 10)
     player2.setPosition(40, 10)
-    player3.setPosition(8, 54)
-    player4.setPosition(40, 54)
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     player1.setPosition(2150, 0)
@@ -130,52 +77,15 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     player1.vy = -200
 })
-controller.player3.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
-    player3.vy = -200
+scene.onOverlapTile(SpriteKind.b, assets.tile`miMosaicosecreto`, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`nivelsecreto`)
+    player1.setPosition(8, 10)
+    player2.setPosition(8, 10)
 })
 scene.onOverlapTile(SpriteKind.a, assets.tile`myTile5`, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`nivel6`)
+    tiles.setCurrentTilemap(tilemap`nivel0`)
     player1.setPosition(8, 10)
     player2.setPosition(40, 10)
-    player3.setPosition(8, 54)
-    player4.setPosition(40, 54)
-})
-scene.onOverlapTile(SpriteKind.d, assets.tile`myTile2`, function (sprite, location) {
-    player4.setPosition(40, 54)
-})
-scene.onOverlapTile(SpriteKind.b, assets.tile`myTile3`, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`nivel2`)
-    player1.setPosition(8, 10)
-    player2.setPosition(40, 10)
-    player3.setPosition(8, 54)
-    player4.setPosition(40, 54)
-})
-scene.onOverlapTile(SpriteKind.c, assets.tile`myTile3`, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`nivel2`)
-    player1.setPosition(8, 10)
-    player2.setPosition(40, 10)
-    player3.setPosition(8, 54)
-    player4.setPosition(40, 54)
-})
-controller.player3.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pressed, function () {
-    player3.setImage(img`
-        . . . b 7 b . . . . . . . . . . 
-        . . . . b 7 b . . . . . . . . . 
-        . . . . . c b . . . . . . . . . 
-        . . . . b b b b b b . . . . . . 
-        . . . b 7 7 7 7 7 b b . . . . . 
-        . . f 6 7 7 f 1 6 7 b b . . . . 
-        . . c 4 6 7 f f 1 7 7 b . . . . 
-        . . 4 4 6 6 b f 6 7 7 b . . . . 
-        b 4 4 4 4 4 7 7 7 6 b b 6 6 6 b 
-        . b 4 4 4 4 4 7 7 b 7 7 7 6 b b 
-        . . b 7 7 7 7 7 6 7 7 7 7 c 6 b 
-        . b 7 7 7 7 7 7 b 7 7 6 c 6 6 c 
-        . b 7 7 7 7 7 7 7 b c c 6 6 b c 
-        . b 6 7 7 7 7 7 6 6 6 6 6 6 c . 
-        . . b b 7 7 7 6 6 6 6 6 b c . . 
-        . . . b b c c c c c c c c . . . 
-        `)
 })
 controller.player1.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pressed, function () {
     player1.setImage(img`
@@ -197,53 +107,19 @@ controller.player1.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pr
         . . . b b c c c c c c c c . . . 
         `)
 })
-scene.onOverlapTile(SpriteKind.c, assets.tile`myTile4`, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`nivel1`)
-    player1.setPosition(8, 10)
-    player2.setPosition(40, 10)
-    player3.setPosition(8, 54)
-    player4.setPosition(40, 54)
-})
 scene.onOverlapTile(SpriteKind.b, assets.tile`myTile4`, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`nivel1`)
+    tiles.setCurrentTilemap(tilemap`nivel6`)
     player1.setPosition(8, 10)
     player2.setPosition(40, 10)
-    player3.setPosition(8, 54)
-    player4.setPosition(40, 54)
 })
-controller.player4.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Pressed, function () {
-    player4.setImage(img`
-        . . . . . . . . . . b 9 b . . . 
-        . . . . . . . . . b 9 b . . . . 
-        . . . . . . . . . b c . . . . . 
-        . . . . . . b b b b b b . . . . 
-        . . . . . b b 9 9 9 9 9 b . . . 
-        . . . . b b 9 6 1 f 9 9 6 f . . 
-        . . . . b 9 9 1 f f 9 6 4 c . . 
-        . . . . b 9 9 6 f b 6 6 4 4 . . 
-        b 6 6 6 b b 6 9 9 9 4 4 4 4 4 b 
-        b b 6 9 9 9 b 9 9 4 4 4 4 4 b . 
-        b 6 c 9 9 9 9 6 9 9 9 9 9 b . . 
-        c 6 6 c 6 9 9 b 9 9 9 9 9 9 b . 
-        c b 6 6 c c b 9 9 9 9 9 9 9 b . 
-        . c 6 6 6 6 6 6 9 9 9 9 9 6 b . 
-        . . c b 6 6 6 6 6 9 9 9 b b . . 
-        . . . c c c c c c c c b b . . . 
-        `)
-})
-scene.onOverlapTile(SpriteKind.d, assets.tile`myTile4`, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`nivel1`)
-    player1.setPosition(8, 10)
-    player2.setPosition(40, 10)
-    player3.setPosition(8, 54)
-    player4.setPosition(40, 54)
-})
-scene.onOverlapTile(SpriteKind.a, assets.tile`myTile3`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.b, assets.tile`myTile1`, function (sprite, location) {
     tiles.setCurrentTilemap(tilemap`nivel2`)
     player1.setPosition(8, 10)
     player2.setPosition(40, 10)
-    player3.setPosition(8, 54)
-    player4.setPosition(40, 54)
+})
+scene.onOverlapTile(SpriteKind.b, assets.tile`myTile0`, function (sprite, location) {
+    player1.setPosition(8, 10)
+    player2.setPosition(40, 10)
 })
 controller.player2.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Pressed, function () {
     player2.setImage(img`
@@ -266,17 +142,15 @@ controller.player2.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.P
         `)
 })
 scene.onOverlapTile(SpriteKind.b, assets.tile`myTile2`, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`nivel1`)
+    player1.setPosition(8, 10)
     player2.setPosition(40, 10)
 })
 scene.onOverlapTile(SpriteKind.b, assets.tile`myTile5`, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`nivel6`)
+    tiles.setCurrentTilemap(tilemap`nivel0`)
     player1.setPosition(8, 10)
     player2.setPosition(40, 10)
-    player3.setPosition(8, 54)
-    player4.setPosition(40, 54)
 })
-let player4: Sprite = null
-let player3: Sprite = null
 let player2: Sprite = null
 let player1: Sprite = null
 scene.setBackgroundImage(img`
@@ -401,7 +275,7 @@ scene.setBackgroundImage(img`
     3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
     3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
     `)
-tiles.setCurrentTilemap(tilemap`nivel0`)
+tiles.setCurrentTilemap(tilemap`nivel9`)
 player1 = sprites.create(img`
     . . . . . . . . . . b 2 b . . . 
     . . . . . . . . . b 2 b . . . . 
@@ -444,49 +318,5 @@ player2 = sprites.create(img`
 player2.setPosition(40, 10)
 controller.player2.moveSprite(player2, 100, 0)
 player2.ay = 500
-player3 = sprites.create(img`
-    . . . . . . . . . . b 7 b . . . 
-    . . . . . . . . . b 7 b . . . . 
-    . . . . . . . . . b c . . . . . 
-    . . . . . . b b b b b b . . . . 
-    . . . . . b b 7 7 7 7 7 b . . . 
-    . . . . b b 7 6 1 f 7 7 6 f . . 
-    . . . . b 7 7 1 f f 7 6 4 c . . 
-    . . . . b 7 7 6 f b 6 6 4 4 . . 
-    b 6 6 6 b b 6 7 7 7 4 4 4 4 4 b 
-    b b 6 7 7 7 b 7 7 4 4 4 4 4 b . 
-    b 6 c 7 7 7 7 6 7 7 7 7 7 b . . 
-    c 6 6 c 6 7 7 b 7 7 7 7 7 7 b . 
-    c b 6 6 c c b 7 7 7 7 7 7 7 b . 
-    . c 6 6 6 6 6 6 7 7 7 7 7 6 b . 
-    . . c b 6 6 6 6 6 7 7 7 b b . . 
-    . . . c c c c c c c c b b . . . 
-    `, SpriteKind.c)
-player3.ay = 500
-player3.setPosition(8, 54)
-controller.player3.moveSprite(player3, 100, 0)
-player4 = sprites.create(img`
-    . . . . . . . . . . b 9 b . . . 
-    . . . . . . . . . b 9 b . . . . 
-    . . . . . . . . . b c . . . . . 
-    . . . . . . b b b b b b . . . . 
-    . . . . . b b 9 9 9 9 9 b . . . 
-    . . . . b b 9 6 1 f 9 9 6 f . . 
-    . . . . b 9 9 1 f f 9 6 4 c . . 
-    . . . . b 9 9 6 f b 6 6 4 4 . . 
-    b 6 6 6 b b 6 9 9 9 4 4 4 4 4 b 
-    b b 6 9 9 9 b 9 9 4 4 4 4 4 b . 
-    b 6 c 9 9 9 9 6 9 9 9 9 9 b . . 
-    c 6 6 c 6 9 9 b 9 9 9 9 9 9 b . 
-    c b 6 6 c c b 9 9 9 9 9 9 9 b . 
-    . c 6 6 6 6 6 6 9 9 9 9 9 6 b . 
-    . . c b 6 6 6 6 6 9 9 9 b b . . 
-    . . . c c c c c c c c b b . . . 
-    `, SpriteKind.d)
-player4.ay = 500
-player4.setPosition(40, 54)
-controller.player4.moveSprite(player4, 100, 0)
 splitScreen.cameraFollowSprite(splitScreen.Camera.Camera1, player1)
 splitScreen.cameraFollowSprite(splitScreen.Camera.Camera2, player2)
-splitScreen.cameraFollowSprite(splitScreen.Camera.Camera3, player3)
-splitScreen.cameraFollowSprite(splitScreen.Camera.Camera4, player4)
